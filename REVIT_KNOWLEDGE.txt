@@ -1,0 +1,11 @@
+.NET
+Windows API (Application Programming Interface)
+
+C#
+Språk som fungerar i .NET 
+
+Revit API
+Revits application programming interface, körs i .NET med C# (alternativt Python)
+
+Shared parameters
+En textfil från vilken du kan styra och standardisera parametrar i projekt
