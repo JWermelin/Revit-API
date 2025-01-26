@@ -9,3 +9,5 @@ Revits application programming interface, körs i .NET med C# (alternativt Pytho
 
 Shared parameters
 En textfil från vilken du kan styra och standardisera parametrar i projekt
+
+Revit API fungerar med både C# och Python.
