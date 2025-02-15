@@ -1,3 +1,5 @@
+#coding: utf-8
+
 #Title
 __title__ = "JW Template.min"
 __doc__ = """Verison =1.0
@@ -19,6 +21,5 @@ from System.Collections.Generic import List
 
 #Variables
 doc = __revit__.ActiveUIDocument.Document #type: Document
-#verkar inte funka att få till autocomplete, lista ut varför.
 uidoc = __revit__.ActiveUIDocument  #type: UIDocument
 app = __revit__.Application #type: Application

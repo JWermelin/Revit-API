@@ -1,11 +1,23 @@
+#coding: utf-8
+
+#Title
+__title__ = "CalculateWallSurfaceArea"
+__doc__ = """Verison =1.0
+Date = 2025-02-15
+
+Description:
+This calculates the total surface area for all walls in model.
+
+How-to: Push button."""
+
 from Autodesk.Revit import DB
 
 # Use __revit__ to access the active UIDocument in pyRevit
 doc = __revit__.ActiveUIDocument.Document
 
 # Create a collector instance and collect all the walls from the model
-wall_collector = DB.FilteredElementCollector(doc) \
-    .OfCategory(DB.BuiltInCategory.OST_Walls) \
+wall_collector = DB.FilteredElementCollector(doc)\
+    .OfCategory(DB.BuiltInCategory.OST_Walls)\
     .WhereElementIsNotElementType()
 
 # Initialize total area
