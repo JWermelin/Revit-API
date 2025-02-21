@@ -42,11 +42,10 @@ try:
         # Safely get the wall top offset parameter using get_Parameter
         wall_top_offset_param = wall.get_Parameter(DB.BuiltInParameter.WALL_TOP_OFFSET)
 
-        if wall_top_offset_param and wall_top_offset_param.CanSet():  # Check if the parameter exists and can be set
-            try:
+        try:
                 # Set the new parameter value for this wall
-                wall_top_offset_param.Set(500.0)
-            except Exception as e:
+                wall_top_offset_param.Set(5.0)
+        except Exception as e:
                 # Print an error message for the wall if it fails
                 print("Error updating wall {0}: {1}".format(wall.Id, str(e)))
                 # If an error occurs with a specific wall, continue to the next one
