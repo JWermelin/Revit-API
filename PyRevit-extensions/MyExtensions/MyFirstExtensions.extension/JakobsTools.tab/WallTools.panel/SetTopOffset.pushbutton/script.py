@@ -18,6 +18,7 @@ from Autodesk.Revit.DB import Transaction
 import clr
 clr.AddReference("System")
 from System.Collections.Generic import List
+from pyrevit import forms
 
 #Variables
 doc = __revit__.ActiveUIDocument.Document #type: Document
@@ -42,17 +43,18 @@ try:
         # Safely get the wall top offset parameter using get_Parameter
         wall_top_offset_param = wall.get_Parameter(DB.BuiltInParameter.WALL_TOP_OFFSET)
 
-        try:
-                offset_in_mm = 5.0 / 304.8  # Example: 5 feet to meters - CHANGE THE VALUE 5 TO THE DESIRED VALUE.
-                # Set the new parameter value for this wall
-                wall_top_offset_param.Set(offset_in_mm)
-        except Exception as e:
+        if wall_top_offset_param:
+            try:
+                value = forms.ask_for_string(prompt='Enter new top offset value:') # prompt input from user
+                offset_in_mm = float(value) / 304.8 # convert the input to a float value and do conversion
+                wall_top_offset_param.Set(offset_in_mm) # set parameter value
+            except Exception as e:
                 # Print an error message for the wall if it fails
                 print("Error updating wall {0}: {1}".format(wall.Id, str(e)))
                 # If an error occurs with a specific wall, continue to the next one
                 continue
-        else:
-            print("Wall {0} does not have a valid wall_top_offset_param.".format(wall.Id))
+            else:
+                print("Wall {0} does not have a valid wall_top_offset_param.".format(wall.Id))
 
     # Commit the transaction after all changes
     t.Commit()
