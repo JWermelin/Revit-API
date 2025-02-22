@@ -43,8 +43,9 @@ try:
         wall_top_offset_param = wall.get_Parameter(DB.BuiltInParameter.WALL_TOP_OFFSET)
 
         try:
+                offset_in_mm = 5.0 / 304.8  # Example: 5 feet to meters - CHANGE THE VALUE 5 TO THE DESIRED VALUE.
                 # Set the new parameter value for this wall
-                wall_top_offset_param.Set(5.0)
+                wall_top_offset_param.Set(offset_in_mm)
         except Exception as e:
                 # Print an error message for the wall if it fails
                 print("Error updating wall {0}: {1}".format(wall.Id, str(e)))

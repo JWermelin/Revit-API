@@ -11,3 +11,8 @@ Shared parameters
 En textfil från vilken du kan styra och standardisera parametrar i projekt
 
 Revit API fungerar med både C# och Python. <3
+
+
+DEBUG
+-SetTopOffset
+Du behöver definiera att det ska vara i millimeter. Nu väljer den att ändra det till fot.
