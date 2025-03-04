@@ -17,7 +17,7 @@ from Autodesk.Revit.DB import Transaction
 
 import clr
 clr.AddReference("System")
-from System.Collections.Generic import List
+from System import Double  # Importing System.Double correctly
 from pyrevit import forms
 
 #Variables
@@ -42,10 +42,16 @@ try:
     for wall in wall_collector:
         # Safely get the wall top offset parameter using get_Parameter
         wall_top_offset_param = wall.get_Parameter(DB.BuiltInParameter.WALL_TOP_OFFSET)
-        input_form = forms.ask_for_string(prompt='Enter new top offset value:') # prompt input from user
-        user_input = float(input_form) / 304.8
-        wall_top_offset_param.Set(user_input) # set parameter value
         
+        # Prompt for user input
+        input_form = forms.ask_for_string(prompt='Enter new top offset value (in millimeters):')  # get value as string
+        if input_form:
+            # Convert user input to float and then to Revit Double (in feet)
+            user_input = float(input_form) / 304.8  # Convert inches to millimetera (Revit uses feet by default)
+            revit_double_input = Double(user_input)  # Convert to System.Double
+            
+            # Set the wall top offset parameter to the new value
+            wall_top_offset_param.Set(revit_double_input)
 
     # Commit the transaction after all changes
     t.Commit()
