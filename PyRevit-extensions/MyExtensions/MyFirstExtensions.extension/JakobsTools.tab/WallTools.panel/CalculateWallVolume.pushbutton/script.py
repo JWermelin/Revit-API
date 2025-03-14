@@ -10,7 +10,7 @@ wall_collector = DB.FilteredElementCollector(doc)\
 .WhereElementIsNotElementType()
 
 # Iterate over wall and collect Volume data
-total_volume = 0.0
+total_volume = 0.0 # This is defining a starting point (i.e. start the counting at 0.0)
 
 for wall in wall_collector:
     vol_param = wall.Parameter[DB.BuiltInParameter.HOST_VOLUME_COMPUTED]
