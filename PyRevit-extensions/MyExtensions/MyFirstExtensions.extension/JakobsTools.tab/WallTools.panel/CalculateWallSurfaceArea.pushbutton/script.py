@@ -1,7 +1,7 @@
 #coding: utf-8
 
 #Title
-__title__ = "CalculateWallSurfaceArea"
+__title__ = "Calculate Wall Surface Area"
 __doc__ = """Verison =1.0
 Date = 2025-02-15
 

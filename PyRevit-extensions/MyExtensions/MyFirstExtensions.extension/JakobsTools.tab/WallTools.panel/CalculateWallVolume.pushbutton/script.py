@@ -1,3 +1,8 @@
+#coding: utf-8
+
+#Title
+__title__ = "Calculate Wall Surface Area"
+
 """Calculates total volume of all walls in the model."""
 
 from Autodesk.Revit import DB

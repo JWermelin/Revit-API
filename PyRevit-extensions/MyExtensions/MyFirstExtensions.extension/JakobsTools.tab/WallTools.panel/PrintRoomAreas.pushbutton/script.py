@@ -1,7 +1,7 @@
 #coding: utf-8
 
 #Title
-__title__ = "PrintRoomAreas"
+__title__ = "Print Room Areas"
 __doc__ = """Verison =1.0
 Date = 2025-03-14
 
