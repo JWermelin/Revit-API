@@ -1,7 +1,7 @@
 #coding: utf-8
 
 #Title
-__title__ = "SetTopOffset"
+__title__ = "Set Top Offset"
 __doc__ = """Verison =1.0
 Date = 2025-xx-xx
 
@@ -37,21 +37,22 @@ wall_collector = DB.FilteredElementCollector(doc)\
 t = Transaction(doc, "Set Wall Top Offset")  # Start a single transaction
 t.Start()
 
+# Prompt for user input
+input_form = forms.ask_for_string(prompt='Enter new top offset value (in millimeters):')   # get value as string
 try:
+    
     # Iterate over each wall and collect Parameter data
     for wall in wall_collector:
         # Safely get the wall top offset parameter using get_Parameter
         wall_top_offset_param = wall.get_Parameter(DB.BuiltInParameter.WALL_TOP_OFFSET)
         
-        # Prompt for user input
-        input_form = forms.ask_for_string(prompt='Enter new top offset value (in millimeters):')  # get value as string
-        if input_form:
-            # Convert user input to float and then to Revit Double (in feet)
-            user_input = float(input_form) / 304.8  # Convert inches to millimetera (Revit uses feet by default)
-            revit_double_input = Double(user_input)  # Convert to System.Double
+        
+        # Convert user input to float and then to Revit Double (in feet)
+        user_input = float(input_form) / 304.8  # Convert inches to millimetera (Revit uses feet by default)
+        revit_double_input = Double(user_input)  # Convert to System.Double
             
-            # Set the wall top offset parameter to the new value
-            wall_top_offset_param.Set(revit_double_input)
+        # Set the wall top offset parameter to the new value
+        wall_top_offset_param.Set(revit_double_input)
 
     # Commit the transaction after all changes
     t.Commit()
