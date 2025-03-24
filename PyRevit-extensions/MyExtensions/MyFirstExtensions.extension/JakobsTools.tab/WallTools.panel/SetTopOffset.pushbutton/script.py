@@ -48,7 +48,7 @@ try:
         
         
         # Convert user input to float and then to Revit Double (in feet)
-        user_input = float(input_form) / 304.8  # Convert inches to millimetera (Revit uses feet by default)
+        user_input = float(input_form) / 304.8  # Convert inches to millimeter (Revit uses feet by default)
         revit_double_input = Double(user_input)  # Convert to System.Double
             
         # Set the wall top offset parameter to the new value

@@ -15,4 +15,5 @@ Revit API fungerar med både C# och Python. <3
 
 DEBUG
 -SetTopOffset
-Du behöver definiera att det ska vara i millimeter. Nu väljer den att ändra det till fot.
+Du kan testa att minska try-except blocket till det som skulle kunna gå fel. 
+Hade varit fint med else som printar ut om man inte skriver in siffror.
