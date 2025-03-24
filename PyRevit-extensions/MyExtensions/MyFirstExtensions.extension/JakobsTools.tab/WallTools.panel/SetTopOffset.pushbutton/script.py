@@ -8,7 +8,7 @@ Date = 2025-xx-xx
 Description:
 This sets a new value for Wall Top Offsets.
 
-How-to: Select xx, then push button."""
+How-to: Push button to select all walls, then input a new value."""
 
 
 #Imports
@@ -59,5 +59,5 @@ try:
 
 except Exception as e:
     # If anything goes wrong, rollback the transaction
-    print("Error: {}".format(str(e)))
+    print("Error: Not a number".format(str(e)))
     t.RollBack()
