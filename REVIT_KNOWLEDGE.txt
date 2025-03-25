@@ -13,7 +13,5 @@ En textfil från vilken du kan styra och standardisera parametrar i projekt
 Revit API fungerar med både C# och Python. <3
 
 
-DEBUG
--SetTopOffset
-Du kan testa att minska try-except blocket till det som skulle kunna gå fel. 
-Hade varit fint med else som printar ut om man inte skriver in siffror.
+Todo:
+Testa att fixa ett skript som printar ut golvytan på alla plan.
