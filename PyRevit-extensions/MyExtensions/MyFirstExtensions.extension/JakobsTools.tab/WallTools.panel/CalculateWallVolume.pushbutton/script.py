@@ -1,7 +1,7 @@
 #coding: utf-8
 
 #Title
-__title__ = "Calculate Wall Surface Area"
+__title__ = "Calculate Wall Volume"
 
 """Calculates total volume of all walls in the model."""
 
