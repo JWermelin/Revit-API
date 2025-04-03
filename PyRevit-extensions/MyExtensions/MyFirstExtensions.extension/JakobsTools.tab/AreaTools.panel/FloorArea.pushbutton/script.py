@@ -22,20 +22,27 @@ floors = Fec(doc).OfCategory(Bic.OST_Floors).\
 
 SQFT_TO_SQM = 0.092903
 
-# Iterate over each wall and collect area data
+# Initialize total area
+total_area = 0.0
+
+# Iterate over each floor and collect area data
 for floor in floors:
     # Safely get the area parameter using get_Parameter
     area_param = floor.get_Parameter(DB.BuiltInParameter.HOST_AREA_COMPUTED)
-    level_param = floor.get_Parameter(DB.BuiltInParameter.LEVEL_PARAM)   
+    level_id = floor.LevelId
+    level = doc.GetElement(level_id) if level_id != DB.ElementId.InvalidElementId else None
 
-    # Check if the area and level parameter exists and has a value
-    if area_param and level_param:   
-        print(15*"-")
-        print(floor.Id)
+    # Check if the area and level exist
+    if area_param and level:   
+        print(15 * "-")
+        print("Floor ID: {}".format(floor.Id))
         area_in_sqft = area_param.AsDouble()  # Area in square feet
         area_in_sqm = area_in_sqft * SQFT_TO_SQM  # Convert to square meters
-        print(area_in_sqm)     
-        print(level_param.AsString())
+        print("Area: {} m2".format(area_in_sqm))
+        print("Level: {}".format(level.Name))
+        total_area += area_in_sqm
     else:
         print(15*"-")
         print("No values found")
+print(15 * "-")
+print("Total Floor Area: {}m2".format(total_area))
