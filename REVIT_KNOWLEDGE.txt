@@ -14,4 +14,4 @@ Revit API fungerar med både C# och Python. <3
 
 
 Todo:
-Testa att fixa ett skript som printar ut golvytan på alla plan.
+Fixa så golvytan för varje plan redovisas per plan istället för per element ID (antal golv)

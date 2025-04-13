@@ -38,11 +38,13 @@ for floor in floors:
         print("Floor ID: {}".format(floor.Id))
         area_in_sqft = area_param.AsDouble()  # Area in square feet
         area_in_sqm = area_in_sqft * SQFT_TO_SQM  # Convert to square meters
-        print("Area: {} m2".format(area_in_sqm))
+        rounded_num = round(area_in_sqm, 2)
+        print("Area: {} m2".format(rounded_num))
         print("Level: {}".format(level.Name))
         total_area += area_in_sqm
     else:
         print(15*"-")
         print("No values found")
 print(15 * "-")
-print("Total Floor Area: {}m2".format(total_area))
+rounded_total = round(total_area, 2)
+print("Total Floor Area: {}m2".format(rounded_total))
