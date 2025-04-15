@@ -15,3 +15,5 @@ Revit API fungerar med både C# och Python. <3
 
 Todo:
 Fixa så golvytan för varje plan redovisas per plan istället för per element ID (antal golv)
+Kolla om du kan fixa hänvisningar till uppst.ritningar som automatiskt uppdaterar sig.
+("för uppställning, se ritn. A-46-4-001") 
