@@ -22,5 +22,6 @@ for wall in wall_collector:
     if vol_param:
         total_volume = total_volume + vol_param.AsDouble()
 
+rounded_volume = round(total_volume, 2)
 # now that results are collected, print the total
-print("Total Volume is: {}".format(total_volume))
+print("Total Volume is: {}".format(rounded_volume))

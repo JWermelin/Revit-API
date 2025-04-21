@@ -39,4 +39,5 @@ SQFT_TO_SQM = 0.092903
 # Convert total area from square feet to square meters
 total_area_sqm = total_area * SQFT_TO_SQM
 
-print("Total Room Area in Square Meters is: {} m2".format(total_area_sqm))
+rounded_area = round(total_area_sqm, 2)
+print("Total Room Area in Square Meters is: {} m2".format(rounded_area))
