@@ -15,5 +15,11 @@ Revit API fungerar med både C# och Python. <3
 
 Todo:
 Fixa så golvytan för varje plan redovisas per plan istället för per element ID (antal golv)
+
 Kolla om du kan fixa hänvisningar till uppst.ritningar som automatiskt uppdaterar sig.
 ("för uppställning, se ritn. A-46-4-001") 
+1. lägg till en view reference som du hänvisar till rätt vy.
+view > view reference 
+2. nu kommer ritningsnumret att synas i den taggen.
+3. lägg till prefixet "för uppställning, se ritn." genom att lägga till en text bredvid eller ovan taggen inne i familjen. 
+4. kör man pyRevit skriptet som ändrar ritningsnummer, kommer dessa att uppdateras automatiskt på planerna.
